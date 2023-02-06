@@ -1,0 +1,238 @@
+/* RESPONSIVE FIRST MOBILE */
+
+.section-menu {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    position: sticky;
+    height: 6rem;
+    top: 0;
+    left: 0;
+    right: 1rem;
+    z-index: 2;
+}
+
+.logo-container {
+    margin: 0;
+    padding: 1rem;
+    height: 4.75rem;
+}
+
+.logo-image{
+    height: 100%;
+}
+
+.navigation-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: flex-end;
+    font-family: var(--font-family-changa);
+}
+
+.navigation-container--open {
+    position: fixed;
+    left: 0;
+    right: 1rem;
+    top: 0;
+    bottom: 0;
+    background-color: var(--bg-secondary);
+}
+
+.navigation-menu__icon {
+    font-size: 1.725rem;
+    font-weight: lighter;
+}
+
+.navigation-menu__icon--open {
+    position: absolute;
+    right: -.25rem;
+    font-size: 1.525rem;
+}
+
+.navigation-menu__icon:hover {
+    animation: giro 1.25s infinite;
+    color: #a7aebd;
+}
+
+@keyframes giro {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+.navigation-menu__icon--open:hover {
+    animation: temblar .2s alternate-reverse infinite;
+}
+
+@keyframes temblar {
+    0% {
+        transform: rotateZ(-5deg);
+        color: #691000;
+    }
+
+    50% {
+        transform: rotateZ(0);
+        color: #d18420;
+    }
+
+    100% {
+        transform: rotateZ(5deg);
+        color: #ec1000
+    }
+}
+
+.navigation-list-container {
+    display: none;
+    list-style: none;
+}
+
+.navigation-list-container--open {
+    position: absolute;
+    left: 0;
+    top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+
+.navigation-item {
+    margin: 0;
+    font-size: 1.625rem;
+    font-weight: 300;
+}
+
+.navigation-container:hover {
+    cursor: pointer;
+    color: var(--text-hover);
+}
+
+.navigation-item-link{
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+/* RESPONSIVE COMPUTER - TABLETS */
+
+@media (min-width: 780px) {
+
+    .section-menu {
+        background-color: transparent;
+        height: 9rem;
+    }
+
+    .section-menu-scroll {
+        background-color: var(--bg-secondary);
+    }
+
+    .logo-container{
+        height: 7rem;
+    }
+
+    .navigation-menu__icon {
+        display: none;
+    }
+
+    .navigation-list-container {
+        display: flex;
+        position: static;
+        gap: 2.25rem;
+    }
+
+    .navigation-item {
+        font-size: 1.25rem;
+        position: relative;
+    }
+
+    .navigation-item-link {
+        text-align: center;
+        transition: all 5s;
+    }
+
+    .navigation-item:first-child {
+        text-align: center;
+        display: block;
+        width: 3.75rem;
+    }
+
+    .navigation-item-link::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        /* background-color: #a7aebd; */
+        height: .045rem;
+        animation: navAnimation .5s;
+    }
+
+    .navigation-item-link::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        /* background-color: #a7aebd; */
+        height: .045rem;
+        top: 0;
+        right: 0;
+        animation: navAnimation2 .5;
+    }
+
+    .navigation-item-link:hover::before {
+        animation: navAnimation1 1.75s alternate-reverse infinite;
+        background-color: #a7aebd;
+    }
+
+    .navigation-item-link:hover::after {
+        animation: navAnimation2 1.75s alternate-reverse infinite;
+        background-color: #a7aebd;
+    }
+
+    @keyframes navAnimation1 {
+        0% {
+            width: 0%;
+        }
+
+        50% {
+            width: 25%;
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
+
+    @keyframes navAnimation2 {
+        0% {
+            width: 100%;
+        }
+
+        50% {
+            width: 25%;
+        }
+
+        100% {
+            width: 0%;
+        }
+    }
+}
+
+
+@media (min-width: 1200px) {
+
+    .logo-container,
+    .navigation-container {
+        padding: 0 4rem;
+    }
+
+    .navigation-item {
+        font-size: 1.35rem;
+    }
+}

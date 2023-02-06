@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@300;400;500;600&display=swap');
+
+
+body {
+    margin: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+:root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #1c1c22;
+
+    --text-primary: #fafafa;
+    --text-hover: #fdfdfd;
+
+    --font-family-changa: 'Changa', sans-serif;
+}
+
+
+/* normalizar */
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}

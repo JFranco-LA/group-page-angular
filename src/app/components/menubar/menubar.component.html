@@ -1,0 +1,22 @@
+<section class="section-menu" [ngClass]="{'section-menu-scroll': navbarScroll}">
+    <figure class="logo-container">
+        <img src="../../../assets/images/logoAgrup.png" alt="Logo" class="logo-image">
+    </figure>
+
+    <nav class="navigation-container" [ngClass]="menuStyle">
+        <div class="navigation-menu__icon" (click)="toggleMenu()" [ngClass]="iconStyle">
+            <i *ngIf="closeMenu; else menuElse" class="fa-solid fa-bars"></i>
+            <ng-template #menuElse>
+                <i class="fa-solid fa-x"></i>
+            </ng-template>
+        </div>
+
+        <ul class="navigation-list-container" [ngClass]="listStyle">
+            <li class="navigation-item"><a routerLink="/inicio" class="navigation-item-link">Inicio</a></li>
+            <li class="navigation-item"><a routerLink="/nosotros" class="navigation-item-link">Nosotros</a></li>
+            <li class="navigation-item"><a routerLink="/servicios" class="navigation-item-link">Servicios</a></li>
+            <li class="navigation-item"><a routerLink="/multimedia" class="navigation-item-link">Multimedia</a></li>
+            <li class="navigation-item"><a routerLink="/contacto" class="navigation-item-link">Contacto</a></li>
+        </ul>
+    </nav>
+</section>
